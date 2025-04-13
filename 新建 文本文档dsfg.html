@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据结构知识点展示</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .container {
+            position: relative;
+            width: 800px;  /* 加宽容器 */
+            height: 700px; /* 增高容器 */
+        }
+        
+        /* 中央图片设置（确保在最顶层） */
+        .center-icon {
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            background-image: url('https://tse1-mm.cn.bing.net/th/id/OIP-C.jF4U6r87S4siBVTT0qkimAAAAA?rs=1&pid=ImgDetMain');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 25px rgba(0,0,0,0.3);
+            z-index: 10; /* 最高层级 */
+            border: 4px solid white;
+        }
+        
+        /* 知识点框设置 */
+        .knowledge-point {
+            position: absolute;
+            width: 220px; /* 稍微加宽 */
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 5; /* 低于图片但高于默认 */
+            transition: all 0.3s ease;
+        }
+        
+        /* 精确调整三个知识点的位置（确保不重叠） */
+        .point-1 {
+            top: 50px;   /* 左上 */
+            left: 50px;
+        }
+        
+        .point-2 {
+            top: 50px;   /* 右上 */
+            right: 50px;
+        }
+        
+        .point-3 {
+            bottom: 50px; /* 正下方 */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* 悬浮效果 */
+        .knowledge-point:hover {
+            transform: scale(1.05) translateZ(0);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            z-index: 8; /* 悬浮时临时提高层级 */
+        }
+        
+        /* 为每个知识点框添加不同颜色标识 */
+        .point-1 { 
+            background-color: #f8f1ff;
+            border-top: 4px solid #9c27b0;
+        }
+        .point-2 { 
+            background-color: #e8f5e9;
+            border-top: 4px solid #4caf50;
+        }
+        .point-3 { 
+            background-color: #e3f2fd;
+            border-top: 4px solid #2196f3;
+        }
+        
+        /* 文字样式 */
+        .knowledge-point h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 18px;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .knowledge-point ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+        
+        .knowledge-point li {
+            margin-bottom: 10px;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .knowledge-point li:before {
+            content: "•";
+            color: #4CAF50;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 中央图片（始终在最上层） -->
+        <div class="center-icon"></div>
+        
+        <!-- 三个知识点框（位置精确调整） -->
+        <div class="knowledge-point point-1">
+            <h3>线性结构</h3>
+            <ul>
+                <li>数组：连续内存存储</li>
+                <li>链表：节点+指针</li>
+                <li>栈：LIFO（后进先出）</li>
+                <li>队列：FIFO（先进先出）</li>
+            </ul>
+        </div>
+        
+        <div class="knowledge-point point-2">
+            <h3>树形结构</h3>
+            <ul>
+                <li>二叉树：左右子树</li>
+                <li>二叉搜索树：左小右大</li>
+                <li>AVL树：平衡二叉树</li>
+                <li>B/B+树：文件系统</li>
+            </ul>
+        </div>
+        
+        <div class="knowledge-point point-3">
+            <h3>图结构</h3>
+            <ul>
+                <li>邻接矩阵/邻接表</li>
+                <li>DFS/BFS遍历</li>
+                <li>最短路径算法</li>
+                <li>拓扑排序</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
